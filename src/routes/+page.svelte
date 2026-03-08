@@ -9,14 +9,19 @@
 	let noAbsolute = false;
 
 	let showNoGif = false;
+	let verify = false;
 
 	let showEmojis = false;
 	const emojis = ['🎉', '🥳', '💖', '✨', '💐', '🎆', '🍾', '😍'];
+	const yesSound = new Audio('src/sounds/She said yes!!!.mp3');
 
 	function acceptedInvite() {
 		clickedYes = true;
 		showEmojis = true;
 		showNoGif = false;
+
+		yesSound.currentTime = 0;
+		yesSound.play();
 	}
 
 	function declinedInvitation() {
