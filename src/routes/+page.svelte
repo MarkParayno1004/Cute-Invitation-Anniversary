@@ -16,7 +16,7 @@
 	let yesSound: HTMLAudioElement;
 
 	onMount(() => {
-		yesSound = new Audio('/sounds/celebration.mp3');
+		yesSound = new Audio('src/static/sounds/She said yes!!!.mp3');
 	});
 
 	function acceptedInvite() {
