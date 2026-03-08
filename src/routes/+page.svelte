@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+	import { onMount } from 'svelte';
 	let clickedYes = false;
 
 	let yesSize = 100;
@@ -9,11 +10,14 @@
 	let noAbsolute = false;
 
 	let showNoGif = false;
-	let verify = false;
 
 	let showEmojis = false;
 	const emojis = ['🎉', '🥳', '💖', '✨', '💐', '🎆', '🍾', '😍'];
-	const yesSound = new Audio('src/sounds/She said yes!!!.mp3');
+	let yesSound: HTMLAudioElement;
+
+	onMount(() => {
+		yesSound = new Audio('/sounds/celebration.mp3');
+	});
 
 	function acceptedInvite() {
 		clickedYes = true;
